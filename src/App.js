@@ -1,12 +1,30 @@
 import logo from './logo.svg';
 import './App.css';
 import Button from 'react-bootstrap/Button';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import Main from './layout/Main';
+import Home from './components/Home';
 
 function App() {
+  const router = createBrowserRouter([
+
+    {
+      path: '/',
+      element: <Main></Main>,
+      children: [
+        {
+          path: '/',
+          element: <Home></Home>,
+          loader: () => fetch('http://localhost:5000/courses')
+          
+        }
+      ]
+    }
+
+  ])
   return (
     <div className="App">
-      <h1>setup ok</h1>
-      <Button variant="outline-primary">Primary</Button>
+      <RouterProvider router={router}></RouterProvider>
     </div>
   );
 }
