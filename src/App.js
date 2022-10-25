@@ -18,8 +18,10 @@ function App() {
       children: [
         {
           path: '/',
-          element: <Home></Home>,
-          loader: () => fetch('http://localhost:5000/courses')
+          loader:async() => {
+            return fetch('http://localhost:5000/courses');
+        },
+        element: <Home></Home>
         },
         {
           path: '/fqa',
