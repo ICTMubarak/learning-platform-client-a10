@@ -7,6 +7,7 @@ import Home from './components/Home';
 import Login from './components/Login';
 import Register from './components/Register';
 import FQA from './components/FQA';
+import Blog from './components/Blog';
 
 function App() {
   const router = createBrowserRouter([
@@ -21,17 +22,22 @@ function App() {
           loader: () => fetch('http://localhost:5000/courses')
         },
         {
+          path: '/fqa',
+          element: <FQA></FQA>
+        },
+        {
+          path: '/blog',
+          element: <Blog></Blog>
+        },
+        {
           path: '/login',
           element: <Login></Login>
         },
         {
           path: '/register',
           element: <Register></Register>
-        },
-        {
-          path: '/fqa',
-          element: <FQA></FQA>
         }
+        
       ]
     }
 
