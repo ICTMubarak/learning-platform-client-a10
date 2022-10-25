@@ -6,6 +6,7 @@ import Main from './layout/Main';
 import Home from './components/Home';
 import Login from './components/Login';
 import Register from './components/Register';
+import FQA from './components/FQA';
 
 function App() {
   const router = createBrowserRouter([
@@ -26,6 +27,10 @@ function App() {
         {
           path: '/register',
           element: <Register></Register>
+        },
+        {
+          path: '/fqa',
+          element: <FQA></FQA>
         }
       ]
     }
