@@ -13,6 +13,7 @@ const Header = () => {
                      <Link className="btn btn-ghost normal-case text-xl" to='/blog'>Blog</Link>
                      <Link className="btn btn-ghost normal-case text-xl" to='/login'>Log in</Link>
                      <Link className="btn btn-ghost normal-case text-xl" to='/register'>Regiter</Link>
+                     <input type="checkbox" className="toggle" checked />
                 </div>
                 
         </div>
