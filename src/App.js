@@ -43,10 +43,7 @@ function App() {
 
         {path: '/start/:courseId', 
           loader: async ({params}) => {
-     
            const ID = params.courseId;
-
-  
           return fetch(`http://localhost:5000/courses/${ID}`);
           
     },

@@ -18,7 +18,7 @@ const Home = () => {
             </div>
             
             <div class="col-span-5 border-2">
-                <h1>This is home courses= {courses.length}</h1>
+                <h1>There are have {courses.length} Courses to Learn With Mubarak!</h1>
                 <div class="grid grid-cols-3 gap-2 border-4 gap-4">
                      {
                         courses.map(course => <Course key={course.id} course={course}></Course>)
