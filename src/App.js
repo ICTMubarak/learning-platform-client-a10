@@ -8,6 +8,7 @@ import Login from './components/Login';
 import Register from './components/Register';
 import FQA from './components/FQA';
 import Blog from './components/Blog';
+import Start from './components/Start';
 
 function App() {
   const router = createBrowserRouter([
@@ -38,7 +39,18 @@ function App() {
         {
           path: '/register',
           element: <Register></Register>
-        }
+        },
+
+        {path: '/start/:courseId', 
+          loader: async ({params}) => {
+     
+           const ID = params.courseId;
+
+  
+          return fetch(`http://localhost:5000/courses/${ID}`);
+          
+    },
+    element: <Start></Start>},
         
       ]
     }

@@ -15,6 +15,8 @@ const Header = () => {
                      <Link className="btn btn-ghost normal-case text-xl" to='/register'>Regiter</Link>
                      <input type="checkbox" className="toggle" checked />
                 </div>
+
+               
                 
         </div>
     );
