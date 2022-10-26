@@ -1,8 +1,14 @@
 import React from 'react';
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../contexts/UserContex';
 
 
 const Header = () => {
+
+    const {user} = useContext(AuthContext);
+    console.log(user);
+
     return (
         <div>
                 <div className="navbar bg-primary text-primary-content">
@@ -12,7 +18,10 @@ const Header = () => {
                      <Link className="btn btn-ghost normal-case text-xl" to='/blog'>Blog</Link>
                      <Link className="btn btn-ghost normal-case text-xl" to='/login'>Log in</Link>
                      <Link className="btn btn-ghost normal-case text-xl" to='/register'>Regiter</Link>
-                     <input type="checkbox" className="toggle" checked />
+                     {user?.displayName && <span>Welcome, {user.displayName}</span>}
+                    
+                     <input type="checkbox" className="toggle"/>
+
                 </div>
 
                

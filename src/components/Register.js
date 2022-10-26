@@ -1,7 +1,35 @@
 import React from 'react';
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../contexts/UserContex';
 
-const Register = () => {
+ const Register = () => {
+
+
+   const {createUser} = useContext(AuthContext);
+
+
+
+   const handleSubmit = event =>{
+     event.preventDefault();
+     const form = event.target; 
+     const name = form.name.value;
+     const email = form.email.value;
+     const password = form.password.value;
+     console.log(name, email,password); 
+
+     createUser(email, password)
+     .then(result => {
+         const user = result.user;
+         console.log('registered user', user); 
+     })
+     .catch(error => {
+         console.error(error)
+     })
+
+ }
+
+
     return (
         <div class="grid grid-cols-6 gap-2">
             <div class="border-2">
@@ -20,7 +48,7 @@ const Register = () => {
                 <div className="text-center lg:text-left">
                   <h1 className="text-5xl font-bold">Please Register</h1>
                 </div>
-                <form className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+                <form onSubmit={handleSubmit} className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                   <div className="card-body">
                      <div className="form-control">
                         <label className="label">
@@ -44,7 +72,7 @@ const Register = () => {
                     </div>
    
                     <div className="form-control mt-6">
-                       <button className="btn btn-primary">Register</button>
+                       <button type=''  className="btn btn-primary">Register</button>
                     </div>
                     <label className="label">
                       <Link to='/login' className="label-text-alt link link-hover">Already have an account?</Link>
