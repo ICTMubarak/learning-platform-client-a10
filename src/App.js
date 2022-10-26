@@ -8,6 +8,7 @@ import Register from './components/Register';
 import FQA from './components/FQA';
 import Blog from './components/Blog';
 import Start from './components/Start';
+import PrivateRoute from './routes/PrivateRoute';
 
 function App() {
   const router = createBrowserRouter([
@@ -58,7 +59,7 @@ function App() {
           return fetch(`http://localhost:5000/courses/${ID}`);
           
     },
-    element: <Start></Start>},
+    element: <PrivateRoute><Start></Start></PrivateRoute>},
         
       ]
     }
