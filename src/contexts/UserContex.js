@@ -11,7 +11,7 @@ const auth =getAuth(app);
 const UserContex = ({children}) => {
 
  
-    const [user, setUser] = useState({displayName: 'Mubarak'});
+    const [user, setUser] = useState({});
 
     const googleProvider = new GoogleAuthProvider();
 

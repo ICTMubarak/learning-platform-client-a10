@@ -20,35 +20,35 @@ function App() {
         {
           path: '/',
           loader:async() => {
-            return fetch('http://localhost:5000/courses');
+            return fetch('https://learn-with-mubarak-server.vercel.app/courses');
         },
         element: <Home></Home>
         },
         {
           path: '/fqa',
           loader:async() => {
-            return fetch('http://localhost:5000/courses');
+            return fetch('https://learn-with-mubarak-server.vercel.app/courses');
         },
           element: <FQA></FQA>
         },
         {
           path: '/blog',
           loader:async() => {
-            return fetch('http://localhost:5000/courses');
+            return fetch('https://learn-with-mubarak-server.vercel.app/courses');
         },
           element: <Blog></Blog>
         },
         {
           path: '/login',
           loader:async() => {
-            return fetch('http://localhost:5000/courses');
+            return fetch('https://learn-with-mubarak-server.vercel.app/courses');
         },
           element: <Login></Login>
         },
         {
           path: '/register',
           loader:async() => {
-            return fetch('http://localhost:5000/courses');
+            return fetch('https://learn-with-mubarak-server.vercel.app/courses');
         },
           element: <Register></Register>
         },
@@ -56,7 +56,7 @@ function App() {
         {path: '/start/:courseId', 
           loader: async ({params}) => {
            const ID = params.courseId;
-          return fetch(`http://localhost:5000/courses/${ID}`);
+          return fetch(`https://learn-with-mubarak-server.vercel.app/courses/${ID}`);
           
     },
     element: <PrivateRoute><Start></Start></PrivateRoute>},
