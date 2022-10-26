@@ -1,7 +1,8 @@
 import React from 'react';
 import { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import { AuthContext } from '../contexts/UserContex';
+import LWMLogo from '../LWMLogo.jpg';
 
 
 const Header = () => {
@@ -18,6 +19,8 @@ const Header = () => {
     return (
         <div>
                 <div className="navbar bg-primary text-primary-content">
+                <img src={LWMLogo}/>
+                <button className="btn">Button</button>
                      <Link to='/' className="btn btn-ghost normal-case text-xl">Learn With Mubarak</Link>
                      <Link className="btn btn-ghost normal-case text-xl" to='/'>Courses</Link>
                      <Link className="btn btn-ghost normal-case text-xl" to='/fqa'>FAQ</Link>
