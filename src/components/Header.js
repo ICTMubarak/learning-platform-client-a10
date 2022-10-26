@@ -18,7 +18,7 @@ const Header = () => {
                      <Link className="btn btn-ghost normal-case text-xl" to='/blog'>Blog</Link>
                      <Link className="btn btn-ghost normal-case text-xl" to='/login'>Log in</Link>
                      <Link className="btn btn-ghost normal-case text-xl" to='/register'>Regiter</Link>
-                     {user?.displayName && <span>Welcome, {user.displayName}</span>}
+                     {user?.email && <span>Welcome, {user.email}</span>}
                     
                      <input type="checkbox" className="toggle"/>
 
