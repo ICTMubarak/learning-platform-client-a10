@@ -25,7 +25,12 @@ const Header = () => {
                      <Link className="btn btn-ghost normal-case text-xl" to='/login'>Log in</Link>
                      <Link className="btn btn-ghost normal-case text-xl" to='/register'>Regiter</Link>
                      {user?.email && <span>Welcome, {user.email}</span>}
-                     <button onClick={handleSighOut} className="btn btn-sm">Log Out</button>
+                     {
+                        user?.email ? 
+                        <button onClick={handleSighOut} className="btn btn-sm">Log Out</button>
+                        : <Link to='/login'>Log In</Link>
+                     }
+                     
                     
                      <input type="checkbox" className="toggle"/>
 

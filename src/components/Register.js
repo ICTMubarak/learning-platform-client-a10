@@ -89,7 +89,7 @@ import { AuthContext } from '../contexts/UserContex';
                     </label>
                   </div>
                 </form>
-                <button onClick={handleGoogleSignIn} className="btn btn-outline btn-success">Register with Google</button>
+                <button onClick={handleGoogleSignIn} className="btn btn-outline btn-success">Register and Login with Google</button>
               </div>
             </div>
           </div>
