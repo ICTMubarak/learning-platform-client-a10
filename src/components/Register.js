@@ -6,7 +6,7 @@ import { AuthContext } from '../contexts/UserContex';
  const Register = () => {
 
 
-   const {createUser} = useContext(AuthContext);
+   const {createUser, signInWithGoogle} = useContext(AuthContext);
 
 
 
@@ -29,6 +29,16 @@ import { AuthContext } from '../contexts/UserContex';
 
  }
 
+ const handleGoogleSignIn = () =>{
+
+  signInWithGoogle()
+  .then(result => {
+    const user = result.user;
+    console.log(user);
+  })
+  .catch(error => console.error(error));
+
+ }
 
     return (
         <div class="grid grid-cols-6 gap-2">
@@ -79,6 +89,7 @@ import { AuthContext } from '../contexts/UserContex';
                     </label>
                   </div>
                 </form>
+                <button onClick={handleGoogleSignIn} className="btn btn-outline btn-success">Register with Google</button>
               </div>
             </div>
           </div>
