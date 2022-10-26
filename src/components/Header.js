@@ -6,8 +6,14 @@ import { AuthContext } from '../contexts/UserContex';
 
 const Header = () => {
 
-    const {user} = useContext(AuthContext);
-    console.log(user);
+    const {user, logOut} = useContext(AuthContext);
+    //console.log(user);
+
+    const handleSighOut = () =>{
+        logOut()
+        .then(()=>{})
+        .catch(error=>console.error(error))
+    }
 
     return (
         <div>
@@ -19,6 +25,7 @@ const Header = () => {
                      <Link className="btn btn-ghost normal-case text-xl" to='/login'>Log in</Link>
                      <Link className="btn btn-ghost normal-case text-xl" to='/register'>Regiter</Link>
                      {user?.email && <span>Welcome, {user.email}</span>}
+                     <button onClick={handleSighOut} className="btn btn-sm">Log Out</button>
                     
                      <input type="checkbox" className="toggle"/>
 
