@@ -25,18 +25,30 @@ function App() {
         },
         {
           path: '/fqa',
+          loader:async() => {
+            return fetch('http://localhost:5000/courses');
+        },
           element: <FQA></FQA>
         },
         {
           path: '/blog',
+          loader:async() => {
+            return fetch('http://localhost:5000/courses');
+        },
           element: <Blog></Blog>
         },
         {
           path: '/login',
+          loader:async() => {
+            return fetch('http://localhost:5000/courses');
+        },
           element: <Login></Login>
         },
         {
           path: '/register',
+          loader:async() => {
+            return fetch('http://localhost:5000/courses');
+        },
           element: <Register></Register>
         },
 

@@ -1,7 +1,10 @@
 import React, { useContext } from 'react';
+import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../contexts/UserContex';
+import SideBar from './SideBar';
 
 const Login = () => {
+  const courses = useLoaderData();
 
   const {signIn} =useContext(AuthContext);
 
@@ -24,17 +27,18 @@ const Login = () => {
 
     return (
         <div class="grid grid-cols-6 gap-2">
+        
         <div class="border-2">
            <div className="btn-group btn-group-vertical gap-4">
-               <button className="btn btn-active">HTML</button>
-               <button className="btn btn-active">CSS</button>
-               <button className="btn btn-active">Bootstrup</button>
-               <button className="btn btn-active">Tailwind</button>
-               <button className="btn btn-active">JavaScript</button>
-               <button className="btn btn-active">React</button>
-           </div>
-       </div>
 
+               {
+                        courses.map(course => <SideBar key={course.id} course={course}></SideBar>)
+                }
+              
+           </div>
+           
+           
+       </div>
 
             <div className="hero min-h-screen bg-base-200" class="col-span-5 border-2">
   <div className="hero-content flex-col">
