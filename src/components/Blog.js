@@ -12,7 +12,7 @@ const Blog = () => {
        
         <div class="grid grid-cols-6 gap-2">
         <div class="border-2">
-           <div className="btn-group btn-group-vertical gap-4">
+           <div className="btn-group btn-group-vertical gap-4 ">
 
                {
                         courses.map(course => <SideBar key={course.id} course={course}></SideBar>)
